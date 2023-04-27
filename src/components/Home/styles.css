@@ -1,0 +1,32 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+}
+
+.heading {
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+.info {
+  font-weight: 600;
+}
+
+.warning {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.warning span {
+  background-color: rgb(188, 246, 188);
+  width: 3px;
+  height: 2rem;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+}
