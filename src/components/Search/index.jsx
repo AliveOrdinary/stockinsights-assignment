@@ -1,17 +1,35 @@
 import { useState } from "react";
 import "./styles.css";
+import SelectComponent from "../Dropdown";
+import MultipleSelectCheckmarks from "../Dropdown";
 
 const StockSearchPage = () => {
   const [selectedTimeframe, setSelectedTimeframe] = useState("");
   const [selectedStocks, setSelectedStocks] = useState([]);
 
   const stocksDropdown = [
-    { value: "", label: "Selected Stocks" },
+    { value: "", label: "Select Stocks" },
     { value: "AAPL", label: "AAPL" },
     { value: "GOOG", label: "GOOG" },
     { value: "TSLA", label: "TSLA" },
     { value: "AMZN", label: "AMZN" },
     { value: "MSFT", label: "MSFT" },
+    { value: "FB", label: "FB" },
+    { value: "NVDA", label: "NVDA" },
+    { value: "PYPL", label: "PYPL" },
+  ];
+
+  const timeFrame = [
+    { value: "", label: "Select Year" },
+    { value: "2013-2014", label: "2013-2014" },
+    { value: "2014-2015", label: "2014-2015" },
+    { value: "2015-2016", label: "2015-2016" },
+    { value: "2016-2017", label: "2016-2017" },
+    { value: "2017-2018", label: "2017-2018" },
+    { value: "2018-2019", label: "2018-2019" },
+    { value: "2019-2020", label: "2019-2020" },
+    { value: "2020-2021", label: "2020-2021" },
+    { value: "2021-2022", label: "2021-2022" },
   ];
 
   const handleTimeframeChange = (e) => {
@@ -45,20 +63,17 @@ const StockSearchPage = () => {
       </div>
       <div className="dropdown-container">
         <p>Search within :</p>
-        <div>
+        {/* <div>
           <select
             id="timeframe"
             value={selectedTimeframe}
             onChange={handleTimeframeChange}
           >
-            <option value="" disabled>
-              Selected time
-            </option>
-            <option value="1m">1 Month</option>
-            <option value="3m">3 Months</option>
-            <option value="6m">6 Months</option>
-            <option value="1y">1 Year</option>
-            <option value="5y">5 Years</option>
+            {timeFrame.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
         <div>
@@ -73,7 +88,11 @@ const StockSearchPage = () => {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
+
+        {/* <SelectComponent options={timeFrame} /> */}
+        <MultipleSelectCheckmarks options={timeFrame} />
+        <MultipleSelectCheckmarks options={stocksDropdown} />
       </div>
     </div>
   );
